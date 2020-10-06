@@ -33,12 +33,13 @@ public class GuessingGame extends JFrame {
 				else if (guess > theNumber)
 				message = guess + " is too high. Try again!";
 				else {
-				message = guess + " is correct! You win after " + numberOfTries + " tries! Good work! Let's play again!";
-				btnPlayAgain.setVisible(true);
-				btnNewButton.setVisible(false);
-				lblTriesCount.setVisible(false);
+					int numberofGuess = (10 - numberOfTries--);
+					message = guess + " is correct! You win after " + numberofGuess + " tries! Good work! Let's play again!";
+					btnPlayAgain.setVisible(true);
+					btnNewButton.setVisible(false);
+					lblTriesCount.setVisible(false);
 				}
-				if (numberOfTries <= 0) {
+				if (numberOfTries < 0) {
 					message = "You are a LOSER! Right number is " + theNumber + ".";
 					btnPlayAgain.setVisible(true);
 					btnNewButton.setVisible(false);
